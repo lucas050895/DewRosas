@@ -1,0 +1,88 @@
+.contenedor h2{
+    width: 90%;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--color-primario);
+}
+
+
+/*      GALERIA DE IMAGENES     */
+.carrousel{
+    width: 100%;
+    max-width: 1200px;
+    min-height: 200px;
+    margin: auto;
+    padding: 1em 4em;
+    overflow: hidden;
+}
+.carrousel .grande{
+    width: 500%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+    transition: all .5s ease;
+    transform: translateX(0%);
+}
+.carrousel .grande img{
+    width: calc(100% / 5 - 1em);
+    min-height: 10vh;
+}
+
+
+/*      PUNTOS PARA CAMBIAR CADA IMAGEN     */
+.puntos{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.punto{
+    width: 20px;
+    height: 20px;
+    border-radius: 200%;
+    border: 5px double var(--color-primario);
+
+    margin: 0 .5em;
+}
+.punto.activo{
+    background: var(--color-primario);
+
+}
+
+
+/*      DATOS DE LOS PRODUCTOS     */
+.contenedor > section{
+    width: 100%;
+    min-height: 200px;
+    color: var(--color-primario);
+    font-size: 1.2em;
+}
+.contenedor > section > p{
+    width: 100%;
+    padding: .5em;
+}
+.contenedor > section > p > span:nth-child(1) {
+    display: inline-block;
+    margin-bottom: .2em;
+}
+.contenedor > section > p > span:nth-child(3){
+    width: 100%;
+    padding-left: .5em;
+    display: inline-block;
+}
+.contenedor > section > h3{
+    text-align: center;
+}
+
+/*      BOTONES     */
+.contenedor > .botones{
+    height: 80px;
+    background: red;
+}

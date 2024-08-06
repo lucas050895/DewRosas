@@ -1,0 +1,22 @@
+.contenedor{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor > div{
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 920px;
+    margin: 2em auto;
+    border: 1.5px solid black;
+
+}
+
+.contenedor > div > div{
+    width: 20%;
+    height: 150px;
+    border: 2PX SOLID green;
+}
