@@ -47,7 +47,11 @@
                                     </figure>
                                     <div class="infos">
                                         <h3><?php echo $fila['nombre']; ?></h3>
-                                        <span><?php echo $fila['precio']; ?></span>
+                                        <span>
+                                            <?php
+                                                echo $precio_formateado = number_format($fila['precio'], 0, ',', '.');
+                                            ?>
+                                        </span>
                                         <button type="button">
                                             <a href="enlaces/producto.php?id=<?php echo $fila['id']; ?>">
                                                 Ver
@@ -62,7 +66,10 @@
         </section>
     
         <section id="catalogo">
-            <h2 class="titulo">Nuestro Catalogo</h2>
+            <h2 class="titulo">
+                Nuestro Catalogo
+                <i class="fas fa-sort-down"></i>
+            </h2>
 
             <div class="warpper">
 
@@ -83,26 +90,28 @@
                             <?php
                                 $resultado = $conexion ->query("SELECT *
                                                                     FROM productos WHERE id_categoria = 1 
-                                                                    LIMIT 3")or die($conexion -> error);
+                                                                    LIMIT 10")or die($conexion -> error);
                                 while($fila =mysqli_fetch_array($resultado)){ ?>
-                                    <article class="cCarousel-item">
-                                        <figure>
-                                            <!-- AGREGAR IMAGEN A LA CARPETA "assets/img" Y CAMBIAR example.jpg <?php echo $fila['nombre']; ?> -->
-                                            <img src="assets/img/example.jpg" alt="<?php echo $fila['nombre']; ?>">
-                                        </figure>
-                                        <div class="infos">
-                                            <h3><?php echo $fila['nombre']; ?></h3>
-                                            <span><?php echo $fila['precio']; ?></span>
-                                            <button type="button">
-                                                <a href="enlaces/producto.php?id=<?php echo $fila['id']; ?>">
-                                                    Ver
-                                                </a> 
-                                            </button>
-                                        </div>
+                                    <article>
+                                        <a href="enlaces/producto.php?id=<?php echo $fila['id']; ?>">
+                                            <span>
+                                                <?php echo $fila['nombre']; ?>
+                                            </span>
+                                            <figure>
+                                                <!-- AGREGAR IMAGEN A LA CARPETA "assets/img" Y CAMBIAR example.jpg <?php echo $fila['nombre']; ?> -->
+                                                <img src="assets/img/example.jpg" alt="<?php echo $fila['nombre']; ?>">
+                                            </figure>
+
+                                            <span>
+                                                <?php
+                                                    echo $precio_formateado = number_format($fila['precio'], 0, ',', '.');
+                                                ?>
+                                            </span>
+                                        </a> 
                                     </article>
                             <?php } ?>
                         </div>
-                        <a href="#">LINKS</a>
+                        <a href="#">Ver todos</a>
                     </div>
 
                     <div class="panel" id="two-panel">
@@ -110,55 +119,57 @@
                             <?php
                                 $resultado = $conexion ->query("SELECT *
                                                                     FROM productos WHERE id_categoria = 2 
-                                                                    LIMIT 3")or die($conexion -> error);
+                                                                    LIMIT 10")or die($conexion -> error);
                                 while($fila =mysqli_fetch_array($resultado)){ ?>
-                                    <article class="cCarousel-item">
-                                        <figure>
-                                            <!-- AGREGAR IMAGEN A LA CARPETA "assets/img" Y CAMBIAR example.jpg <?php echo $fila['nombre']; ?> -->
-                                            <img src="assets/img/example.jpg" alt="<?php echo $fila['nombre']; ?>">
-                                        </figure>
-                                        <div class="infos">
-                                            <h3><?php echo $fila['nombre']; ?></h3>
-                                            <span><?php echo $fila['precio']; ?></span>
-                                            <button type="button">
-                                                <a href="enlaces/producto.php?id=<?php echo $fila['id']; ?>">
-                                                    Ver
-                                                </a> 
-                                            </button>
-                                        </div>
+                                    <article>
+                                        <a href="enlaces/producto.php?id=<?php echo $fila['id']; ?>">
+                                            <span>
+                                                <?php echo $fila['nombre']; ?>
+                                            </span>
+                                            <figure>
+                                                <!-- AGREGAR IMAGEN A LA CARPETA "assets/img" Y CAMBIAR example.jpg <?php echo $fila['nombre']; ?> -->
+                                                <img src="assets/img/example.jpg" alt="<?php echo $fila['nombre']; ?>">
+                                            </figure>
+
+                                            <span>
+                                                <?php
+                                                    echo $precio_formateado = number_format($fila['precio'], 0, ',', '.');
+                                                ?>
+                                            </span>
+                                        </a> 
                                     </article>
                             <?php } ?>
                         </div>
-
-                        <a href="#">LINKS</a>
+                        <a href="#">Ver todos</a>
                     </div>
 
                     <div class="panel" id="three-panel">
                         <div>
                             <?php
                                 $resultado = $conexion ->query("SELECT *
-                                                                    FROM productos WHERE id_categoria = 3 
-                                                                    LIMIT 3")or die($conexion -> error);
+                                                                    FROM productos WHERE id_categoria = 3
+                                                                    LIMIT 10")or die($conexion -> error);
                                 while($fila =mysqli_fetch_array($resultado)){ ?>
-                                    <article class="cCarousel-item">
-                                        <figure>
-                                            <!-- AGREGAR IMAGEN A LA CARPETA "assets/img" Y CAMBIAR example.jpg <?php echo $fila['nombre']; ?> -->
-                                            <img src="assets/img/example.jpg" alt="<?php echo $fila['nombre']; ?>">
-                                        </figure>
-                                        <div class="infos">
-                                            <h3><?php echo $fila['nombre']; ?></h3>
-                                            <span><?php echo $fila['precio']; ?></span>
-                                            <button type="button">
-                                                <a href="enlaces/producto.php?id=<?php echo $fila['id']; ?>">
-                                                    Ver
-                                                </a> 
-                                            </button>
-                                        </div>
+                                    <article>
+                                        <a href="enlaces/producto.php?id=<?php echo $fila['id']; ?>">
+                                            <span>
+                                                <?php echo $fila['nombre']; ?>
+                                            </span>
+                                            <figure>
+                                                <!-- AGREGAR IMAGEN A LA CARPETA "assets/img" Y CAMBIAR example.jpg <?php echo $fila['nombre']; ?> -->
+                                                <img src="assets/img/example.jpg" alt="<?php echo $fila['nombre']; ?>">
+                                            </figure>
+
+                                            <span>
+                                                <?php
+                                                    echo $precio_formateado = number_format($fila['precio'], 0, ',', '.');
+                                                ?>
+                                            </span>
+                                        </a> 
                                     </article>
                             <?php } ?>
                         </div>
-
-                        <a href="#">LINKS</a>
+                        <a href="#">Ver todos</a>
                     </div>
                 </div>
             </div>
