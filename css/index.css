@@ -14,20 +14,14 @@
 /*      DESTACADOS      */
 #destacados{
     width: 100%;
-    max-width: 1200px;
+    max-width: 920px;
     margin: 1rem auto;
     grid-area: destacados;
 }
-/*SUBTITULO*/
-#destacados h2{
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 1rem ;
-    text-transform: uppercase;
-}
+
 #destacados h2 i{
     font-size: 1.5rem;
-    background: -webkit-linear-gradient(#FDC830, #fd5949, #F37335, #F37335);
+    background: linear-gradient(#FDC830, #fd5949, #F37335, #F37335);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -44,7 +38,7 @@
     z-index: 1;
     font-size: 3rem;
     cursor: pointer;
-    background-color: black;
+    background-color: var(--color-secundario);
     border-radius: 50%;
 }
 #cCarousel #prev{
@@ -75,7 +69,7 @@
 .cCarousel-item{
     width: 250px;
     height: 365px;
-    border: 2px solid white;
+    border: 2px solid var(--color-secundario);
     border-radius: 15px;
     overflow: hidden;
     display: flex;
@@ -93,6 +87,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    background-color: var(--color-secundario);
 }
 .cCarousel-item .infos span::before{
     content: '$ ';
@@ -124,15 +119,65 @@
     grid-area: catalogo;
     width: 100%;
 }
-/* TITULO */
-#catalogo > h2{
-    font-size: 2.5rem;
-    margin: 1rem auto;
-    text-align: center;
-    text-transform: capitalize;
-    text-decoration: underline;
+#catalogo > .warpper{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
-
+#catalogo > .warpper > .tab{
+    cursor: pointer;
+    padding:10px 20px;
+    margin:0px 2px;
+    display:inline-block;
+    color:var(--color-primario);
+    border: 1px solid var(--color-primario);
+    border-bottom: none;
+    background: var(--color-secundario);
+}
+#catalogo > .warpper > .panels{
+    width:80%;
+    overflow:hidden;
+    margin: 0 auto 3rem;
+    padding:20px;
+    border-radius:3px;
+    background-color: var(--color-primario);
+}
+#catalogo > .warpper > .panels > .panel{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadein .8s;
+}
+#catalogo > .warpper > .panels > .panel > div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+@keyframes fadein {
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+}
+.radio{
+    display:none;
+}
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel{
+    display: flex;
+}
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab{
+    color:var(--color-secundario);
+    background-color: var(--color-primario);
+}
 
 
 
