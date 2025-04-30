@@ -1,63 +1,57 @@
-
 /*      PIE DE PAGINA       */
 footer{
     width: 100%;
-    height: 400px;
-    padding-top: 50px;
-    background: var(--color-primario);
+    height: 200px;
 }
-footer > div{
+footer > svg{
+    margin: -5px 0; 
+}
+footer > section{
+    width: 100%;
     height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.redes, .subcripcion{
-    width: 90%;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     margin: auto;
     text-align: center;
-    background: rgba(255,255,255,.5);
-    border-radius: 5px;
+    background: #ec8fe6;
 }
-footer .redes > h2,
-footer .subcripcion > h2{
-    font-size: 2em;
+footer > section > h2{
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: var(--color-secundario);
 }
-footer .redes div{
-    width: 50%;
+footer > section > div{
+    width: 100%;
+    max-width: 500px;
+    height: 60%;
+    margin: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: auto;
 }
-footer .redes div > a{
-    font-size: 2em ;
+footer > section > div > a{
+    font-size: 2.5em ;
     color: var(--color-secundario);
     text-decoration: none;
 }
-.icon-facebook2{
-    color: #3b5998;
+.fa-facebook{
+    color: #0752f1;
 }
-.icon-instagram{
-    color: #833AB4;
+.fa-instagram{
+    color: #8e07e8;
+}
+.fa-whatsapp{
+    color: #07f35d;
 }
 
-footer .subcripcion input{
-    width: 200px;
-    height: 30px;
-    margin: auto;
-}
+
+
 /*      CREADO      */
 h4{
     height: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: var(--color-secundario);
     text-align: center;
+    font-size: .8em;
+    color: var(--color-secundario);
+    background: var(--color-primario);
 }
