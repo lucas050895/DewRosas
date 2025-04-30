@@ -41,23 +41,22 @@
                             $resultado = $conexion ->query("SELECT * FROM productos WHERE destacado = 1")or die($conexion -> error);
                             while($fila =mysqli_fetch_array($resultado)){ ?>
                                 <article class="cCarousel-item">
-                                    <figure>
-                                        <!-- AGREGAR IMAGEN A LA CARPETA "assets/img" Y CAMBIAR example.jpg <?php echo $fila['nombre']; ?> -->
-                                        <img src="assets/img/example.jpg" alt="<?php echo $fila['nombre']; ?>">
-                                    </figure>
-                                    <div class="infos">
-                                        <h3><?php echo $fila['nombre']; ?></h3>
+                                    <a href="enlaces/producto.php?id=<?php echo $fila['id']; ?>">
+                                        <span>
+                                            <?php echo $fila['nombre']; ?>
+                                        </span>
+                                        <figure>
+                                            <!-- AGREGAR IMAGEN A LA CARPETA "assets/img" Y CAMBIAR example.jpg <?php echo $fila['nombre']; ?> -->
+                                            <img src="assets/img/example.jpg" alt="<?php echo $fila['nombre']; ?>">
+                                        </figure>
+                                            
                                         <span>
                                             <?php
                                                 echo $precio_formateado = number_format($fila['precio'], 0, ',', '.');
                                             ?>
                                         </span>
-                                        <button type="button">
-                                            <a href="enlaces/producto.php?id=<?php echo $fila['id']; ?>">
-                                                Ver
-                                            </a> 
-                                        </button>
-                                    </div>
+                                        
+                                    </a> 
                                 </article>
                         <?php } ?>
                     </div>
@@ -67,7 +66,7 @@
     
         <section id="catalogo">
             <h2 class="titulo">
-                Nuestro Catalogo
+                Nuestro Catálogo
                 <i class="fas fa-sort-down"></i>
             </h2>
 

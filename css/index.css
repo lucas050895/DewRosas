@@ -13,8 +13,8 @@
 
 /*      DESTACADOS      */
 #destacados{
-    width: 90%;
-    max-width: 500px;
+    width: 80%;
+    max-width: 1200px;
     margin: 1rem auto;
     grid-area: destacados;
 }
@@ -41,15 +41,14 @@
     border-radius: 50%;
 }
 #cCarousel #prev{
-    left: 5px;
+    left: 2px;
 }
 #cCarousel #next{
-    right: 5px;
+    right: 2px;
 }
 #carousel-vp{
-    width: 90%;
-    max-width: 800px;
-    height: 400px;
+    width: 100%;
+    height: 350px;
     display: flex;
     align-items: center;
     position: relative;
@@ -62,52 +61,37 @@
     display: flex;
     position: absolute;
     transition: 0.3s ease-in-out;
-    gap: 10px;
+    gap: 5px;
     left: 0px;
 }
-.cCarousel-item{
-    width: 250px;
-    height: 365px;
-    border: 2px solid var(--color-secundario);
-    border-radius: 15px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+article{
+    width: 15em;
+    height: 18em;
+    padding: 10px;
+    margin: .5em;
+    border: 1px solid var(--color-secundario);
+    border-radius: 5px;
+    background: rgb(150, 150, 150);
     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
 }
-.cCarousel-item img{
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-.cCarousel-item .infos{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color: var(--color-secundario);
-}
-.cCarousel-item .infos span::before{
-    content: '$ ';
-}
-.cCarousel-item .infos button{
-    width: 100px;
-    height: 30px;
-    background: var(--color-primario);
-    border-radius: 15px;
-    cursor: pointer;
-}
-.cCarousel-item .infos button a{
+article > a{
     width: 100%;
     height: 100%;
     display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     color: var(--color-secundario);
-    border-radius: 15px;
-    text-transform: uppercase;
     text-decoration: none;
+    text-align: center;
+}
+article > a > figure > img{
+    width: 100%;
+    margin: .2em auto;
+}
+article > a > span:nth-child(3){
+    color: var(--color-secundario);
+}
+article > a > span:nth-child(3)::before{
+    content: '$ ';
 }
 
 
@@ -155,8 +139,8 @@
     overflow: hidden;
     margin: 0 auto 3rem;
     padding: 20px 0;
-    border-radius: 3px;
     background-color: var(--color-primario);
+    background: rgb(236, 143, 230);
 }
 #catalogo > .warpper > .panels > .panel{
     width: 100%;
@@ -193,33 +177,7 @@
 #two:checked ~ .tabs #two-tab,
 #three:checked ~ .tabs #three-tab{
     color:var(--color-secundario);
-    background-color: var(--color-primario);
-}
-#catalogo > .warpper > .panels > .panel > div > article{
-    width: 10em;
-    height: 13em;
-    padding: 10px;
-    margin: .5em;
-    border: 1px solid var(--color-secundario);
-}
-#catalogo > .warpper > .panels > .panel > div > article > a{
-    width: 100%;
-    height: 100%;
-    display: inline-flex;
-    flex-direction: column;
-    color: var(--color-secundario);
-    text-decoration: none;
-    text-align: center;
-}
-#catalogo > .warpper > .panels > .panel > div > article > a > figure > img{
-    width: 100%;
-    margin: .2em auto;
-}
-#catalogo > .warpper > .panels > .panel > div > article > a > span:nth-child(3){
-    color: var(--color-secundario);
-}
-#catalogo > .warpper > .panels > .panel > div > article > a > span:nth-child(3)::before{
-    content: '$ ';
+    background-color: rgb(236, 143, 230);
 }
 #catalogo > .warpper > .panels > .panel > a{
     width: 100px;
@@ -234,12 +192,8 @@
     border-radius: 15px;
     text-decoration: none;
 }
-
-/*      ADAPTACION      */
-@media screen and (min-width:460px){
-
+#catalogo article{
+    width: 10em;
+    height: 13em;
 }
 
-@media screen and (min-width:720px){
-
-}
