@@ -71,7 +71,7 @@
         include('../layout/meta.php');
     ?>
 
-    <title>Carrito de Compras</title>
+    <title>Dew Rosas</title>
 
     <link rel="stylesheet" href="../css/carrito.css">
 
@@ -113,7 +113,7 @@
                             <?php echo $arregloCarrito[$i]['Cantidad'];?>
                         </td>
                         <td>
-                            <a href="eliminar.php?id=<?php echo $i;?>">
+                            <a href="#" class="btnEliminar" data-id="<?php echo $arregloCarrito[$i]['Id']; ?>">
                                 <i class="fas fa-times"></i>
                             </a>
                         </td>
@@ -131,5 +131,27 @@
     ?> 
     
     <script src="../js/menu.js"></script>
+    <script src="../js/jquery-3.7.1.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".btnEliminar").click(function(event){
+                event.preventDefault();
+                var id = $(this).data('id');
+                var boton = $(this);
+
+                $.ajax({
+                    type: "POST",
+                    url: "../php/eliminarCarrito.php",
+                    data: {
+                        id: id
+                    }
+                }).done(function(respuesta){
+                    boton.parent('td').parent('tr').remove();
+                });
+
+            });
+        });
+    </script>
 </body>
 </html>
