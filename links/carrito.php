@@ -98,9 +98,12 @@
             </thead>
 
             <?php 
+                $total = 0;
+
                 if(isset($_SESSION['carrito'])){
                     $arregloCarrito = $_SESSION['carrito'];
                     for($i=0;$i<count($arregloCarrito);$i++){
+                        $total = $total + ($arregloCarrito[$i]['Precio'] * $arregloCarrito[$i]['Cantidad']);
             ?>
                     <tr>
                         <td>
@@ -121,8 +124,39 @@
 
             <?php
                     }
+
+                    ?>
+
+                    <tr>
+                        <td colspan="3">Total</td>
+                        <td colspan="1">
+                            $ <?php echo $total_formateado = number_format($total, 0, ',', '.');?>
+                        </td>
+                    </tr>
+                    <tr class="trPedido">
+                        <td colspan="4">
+                            <a href="realizarPedido.php" class="realizarPedido">
+                                <button>
+                                    Realizar Pedido
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td colspan="4">
+                            <a href="../php/vaciarCarrito.php" class="btnVaciarCarrito">Vaciar Carrito</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <a href="../index.php" class="btnSeguirComprando">Seguir Comprando</a>
+                        </td>
+                    </tr> -->
+                    <?php
                 }
             ?>
+
+
         </table>
     </main>
 
