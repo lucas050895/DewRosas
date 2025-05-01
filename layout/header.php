@@ -25,6 +25,15 @@
     <div class="carrito">
         <a href="http://lucasconde.ddns.net/DewRosas/links/carrito.php">
             <i class='bx bx-cart'></i>
+            <span>
+            <?php
+                if (isset($_SESSION['carrito'])) {
+                    echo count($_SESSION['carrito']);
+                } else {
+                    echo 0;
+                }
+            ?> 
+            </span>
         </a>
     </div>
 </header>

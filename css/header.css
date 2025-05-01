@@ -43,6 +43,20 @@ header div:nth-child(3) > a{
   color: var(--color-secundario);
   font-size: 1em;
 }
+header div:nth-child(3) > a > span{
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  right: -6px;
+  bottom: -3px;
+  font-size: .35em;
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.486);
+}
 
 
 .menu-icon {
