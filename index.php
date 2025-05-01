@@ -41,7 +41,7 @@
                             $resultado = $conexion ->query("SELECT * FROM productos WHERE destacado = 1")or die($conexion -> error);
                             while($fila =mysqli_fetch_array($resultado)){ ?>
                                 <article class="cCarousel-item">
-                                    <a href="enlaces/producto.php?id=<?php echo $fila['id']; ?>">
+                                    <a href="http://lucasconde.ddns.net/DewRosas/links/producto.php?id=<?php echo $fila['id']; ?>">
                                         <span>
                                             <?php echo $fila['nombre']; ?>
                                         </span>
@@ -92,7 +92,7 @@
                                                                     LIMIT 10")or die($conexion -> error);
                                 while($fila =mysqli_fetch_array($resultado)){ ?>
                                     <article>
-                                        <a href="enlaces/producto.php?id=<?php echo $fila['id']; ?>">
+                                        <a href="http://lucasconde.ddns.net/DewRosas/links/producto.php?id=<?php echo $fila['id']; ?>">
                                             <span>
                                                 <?php echo $fila['nombre']; ?>
                                             </span>
@@ -121,7 +121,7 @@
                                                                     LIMIT 10")or die($conexion -> error);
                                 while($fila =mysqli_fetch_array($resultado)){ ?>
                                     <article>
-                                        <a href="enlaces/producto.php?id=<?php echo $fila['id']; ?>">
+                                        <a href="http://lucasconde.ddns.net/DewRosas/links/producto.php?id=<?php echo $fila['id']; ?>">
                                             <span>
                                                 <?php echo $fila['nombre']; ?>
                                             </span>
@@ -150,7 +150,7 @@
                                                                     LIMIT 10")or die($conexion -> error);
                                 while($fila =mysqli_fetch_array($resultado)){ ?>
                                     <article>
-                                        <a href="enlaces/producto.php?id=<?php echo $fila['id']; ?>">
+                                        <a href="http://lucasconde.ddns.net/DewRosas/links/producto.php?id=<?php echo $fila['id']; ?>">
                                             <span>
                                                 <?php echo $fila['nombre']; ?>
                                             </span>
