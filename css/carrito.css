@@ -1,22 +1,53 @@
+@import url(general.css);
+
+
+
 .contenedor{
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: calc(100vh - 200px);
 }
-
-.contenedor > div{
-    width: 80%;
-    display: flex;
-    justify-content: space-evenly;
-    max-width: 920px;
-    margin: 2em auto;
-    border: 1.5px solid black;
-
+.contenedor > table{
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto 0;
+    border-collapse: collapse;
 }
-
-.contenedor > div > div{
+.contenedor > table > thead{
+    height: 40px;
+    font-weight: 600;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+/*NOMBRE*/
+.contenedor > table > thead > tr > td:nth-child(1),
+.contenedor > table > tbody > tr > td:nth-child(1){
+    width: 40%;
+}
+/*PRECIO*/
+.contenedor > table > thead > tr > td:nth-child(2),
+.contenedor > table > tbody > tr > td:nth-child(2){
+    width: 25%;
+    text-align: center;
+}
+/*CANTIDAD*/
+.contenedor > table > thead > tr > td:nth-child(3),
+.contenedor > table > tbody > tr > td:nth-child(3){
+    width: 15%;
+    text-align: center;
+}
+/*ELIMINAR*/
+.contenedor > table > thead > tr > td:nth-child(4),
+.contenedor > table > tbody > tr > td:nth-child(4){
     width: 20%;
-    height: 150px;
-    border: 2PX SOLID green;
+    text-align: center;
+}
+.contenedor > table > tbody > tr{
+    border-bottom: 1px solid #ddd;
+}
+.contenedor > table > tbody > tr > td{
+    padding: 10px;
+}
+.contenedor > table > tbody > tr > td > a i{
+    color: red;
 }
