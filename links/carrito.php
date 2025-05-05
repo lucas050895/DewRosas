@@ -71,7 +71,7 @@
         include('../layout/meta.php');
     ?>
 
-    <title>Dew Rosas</title>
+    <title>Carrito - Dew Rosas</title>
 
     <link rel="stylesheet" href="../css/carrito.css">
 
@@ -91,74 +91,69 @@
             <thead>
                 <tr>
                     <td>Nombre</td>
-                    <td>Precio</td>
                     <td>Cant</td>
+                    <td>Precio</td>
                     <td>Borrar</td>
                 </tr>
             </thead>
 
-            <?php 
-                $total = 0;
+            <tbody>
+                <?php 
+                    $total = 0;
 
-                if(isset($_SESSION['carrito'])){
-                    $arregloCarrito = $_SESSION['carrito'];
-                    for($i=0;$i<count($arregloCarrito);$i++){
-                        $total = $total + ($arregloCarrito[$i]['Precio'] * $arregloCarrito[$i]['Cantidad']);
-            ?>
+                    if(isset($_SESSION['carrito'])){
+                        $arregloCarrito = $_SESSION['carrito'];
+                        for($i=0;$i<count($arregloCarrito);$i++){
+                            $total = $total + ($arregloCarrito[$i]['Precio'] * $arregloCarrito[$i]['Cantidad']);
+                ?>
                     <tr>
                         <td>
-                            <?php echo $arregloCarrito[$i]['Nombre'];?>
+                            <?php echo substr($arregloCarrito[$i]['Nombre'], 0, 12) ;?>
                         </td>
+
+                        <td>
+                            <?php echo $arregloCarrito[$i]['Cantidad']; ?>
+                        </td>
+
                         <td>
                             $ <?php echo $precio_formateado = number_format($arregloCarrito[$i]['Precio'], 0, ',', '.');?>
                         </td>
-                        <td>
-                            <?php echo $arregloCarrito[$i]['Cantidad'];?>
-                        </td>
+
                         <td>
                             <a href="#" class="btnEliminar" data-id="<?php echo $arregloCarrito[$i]['Id']; ?>">
                                 <i class="fas fa-times"></i>
                             </a>
                         </td>
                     </tr>
-
-            <?php
+                <?php
+                        }
                     }
-
-                    ?>
-
-                    <tr>
-                        <td colspan="3">Total</td>
-                        <td colspan="1">
-                            $ <?php echo $total_formateado = number_format($total, 0, ',', '.');?>
-                        </td>
-                    </tr>
-                    <tr class="trPedido">
-                        <td colspan="4">
-                            <a href="realizarPedido.php" class="realizarPedido">
-                                <button>
-                                    Realizar Pedido
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-                    <!-- <tr>
-                        <td colspan="4">
-                            <a href="../php/vaciarCarrito.php" class="btnVaciarCarrito">Vaciar Carrito</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="4">
-                            <a href="../index.php" class="btnSeguirComprando">Seguir Comprando</a>
-                        </td>
-                    </tr> -->
-                    <?php
-                }
-            ?>
-
-
+                ?>
+            </tbody>
         </table>
     </main>
+
+    <table class="total">
+        <thead>
+            <tr>
+                <td colspan="3">Total</td>
+                <td colspan="1">
+                    $ <?php echo $total_formateado = number_format($total, 0, ',', '.');?>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="4">
+                    <a href="realizar_pedido.php" class="realizarPedido">
+                        <button>
+                            Checkout
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
     <?php
         include('../layout/footer.php');
@@ -187,5 +182,6 @@
             });
         });
     </script>
+
 </body>
 </html>

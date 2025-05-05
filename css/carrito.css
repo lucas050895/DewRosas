@@ -4,12 +4,15 @@
 
 .contenedor{
     width: 100%;
-    min-height: calc(100vh - 200px);
+    max-width: 900px;
+    min-height: 80vh;
+    margin: auto;
 }
 .contenedor > table{
     width: 100%;
     max-width: 900px;
     margin: 20px auto 0;
+    padding: 30px;
     border-collapse: collapse;
 }
 .contenedor > table > thead{
@@ -19,59 +22,86 @@
     color: white;
     text-align: center;
 }
+
+
+
+/*TBODY DE PRODUCTOS*/
+.contenedor > table > tbody:nth-child(2) > tr{
+    height: 40px;
+    border-bottom: 1px solid #00000054;
+}
+
 /*NOMBRE*/
-.contenedor > table > thead > tr > td:nth-child(1),
-.contenedor > table > tbody > tr > td:nth-child(1){
-    width: 40%;
+.contenedor > table > tbody:nth-child(2) > tr > td:nth-of-type(1){
+    width: 50%;
 }
-/*PRECIO*/
-.contenedor > table > thead > tr > td:nth-child(2),
-.contenedor > table > tbody > tr > td:nth-child(2){
-    width: 25%;
-    text-align: center;
-}
+
 /*CANTIDAD*/
-.contenedor > table > thead > tr > td:nth-child(3),
-.contenedor > table > tbody > tr > td:nth-child(3){
-    width: 15%;
+.contenedor > table > tbody:nth-child(2) > tr > td:nth-of-type(2){
+    width: 10%;
     text-align: center;
 }
-/*ELIMINAR*/
-.contenedor > table > thead > tr > td:nth-child(4),
-.contenedor > table > tbody > tr > td:nth-child(4){
-    width: 20%;
+
+/*PRECIO*/
+.contenedor > table > tbody:nth-child(2) > tr > td:nth-of-type(3){
+    width: 30%;
+    text-align: right;
+}
+
+/*BORRAR*/
+.contenedor > table > tbody:nth-child(2) > tr > td:nth-of-type(4){
+    width: 10%;
     text-align: center;
 }
-.contenedor > table > tbody > tr{
-    border-bottom: 1px solid #ddd;
-}
-.contenedor > table > tbody > tr > td{
-    padding: 10px;
-}
-.contenedor > table > tbody > tr > td > a i{
+.contenedor > table > tbody:nth-child(2) > tr > td:nth-of-type(4) > a > i{
     color: red;
 }
 
-/*BOTON REALIZAR PEDIDO*/
-.trPedido{
-    text-align: center;
-    background-color: black;
+
+
+/*TABLA DE TOTAL Y REALIZAR PEDIDO*/
+.total{
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    border-collapse: collapse;
 }
-.realizarPedido{
+
+/*TOTAL*/
+.total > thead > tr{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--color-primario);
+    color: var(--color-secundario);
+}
+.total > thead > tr > td{
+    font-size: 1.8em;
+}
+
+/*BOTON REALIZAR PEDIDO*/
+.total > tbody > tr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.total > tbody > tr > td > a{
     text-decoration: none;
     color: var(--color-primario);
 }
-.realizarPedido > button{
+.total > tbody > tr > td > a > button{
     max-width: 300px;
     height: 50px;
-    padding: 10px;
+    padding: 5px;
     background-color: rgb(236, 143, 230);
     color: white;
     font-size: 1.2em;
-    border: none;
+    border: 1px solid black;
     cursor: pointer;
 }
-.realizarPedido > button:hover{
+.total > tbody > tr > td > a > button:hover{
     background-color: var(--color-secundario);
     color: var(--color-primario)
 }
