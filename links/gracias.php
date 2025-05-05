@@ -8,20 +8,33 @@
     }
 
     $arreglo = $_SESSION['carrito'];
+
     $total = 0;
 
     for($i=0; $i<count($arreglo); $i++){
         $total = $arreglo[$i]['Precio'] * $arreglo[$i]['Cantidad'];
     }
 
+    /*INSERTANDO DATOS EN LA TABLA USUARIOS*/
+    $conexion -> query("INSERT INTO usuario(nombre,apellido,celular,email,contraseña)
+                            VALUES(
+                            '".$_POST['nombre']."',
+                            '".$_POST['apellido']."',
+                            '".$_POST['celular']."',
+                            '".$_POST['email']."',
+                            '".sha1($_POST['contraseña'])."'
+                            )" )or die($conexion->error);
+
+
+    /*INSERTANDO DATOS EN LA TABLA VENTAS*/
+    $id_usuario = $conexion -> insert_id;
     $fecha = date('Y-m-d h:m:s');
     $conexion -> query("INSERT INTO ventas(id_usuario,total,fecha)
-                                VALUES(1,$total,'$fecha') ")or die($conexion->error);
-
+                                VALUES($id_usuario,$total,'$fecha') ")or die($conexion->error);
             
 
+    /*INSERTANDO DATOS EN LA TABLA PRODUCTOS_VENTAS*/
     $id_venta= $conexion ->insert_id ;
-
     for($i=0; $i<count($arreglo); $i++){
         $conexion -> query("INSERT INTO productos_venta(id_venta, id_producto, cantidad, precio, subtotal)
                                 VALUES($id_venta,
@@ -30,7 +43,23 @@
                                     ".$arreglo[$i]['Precio'].",
                                     ".$arreglo[$i]['Cantidad']*$arreglo[$i]['Precio']."
                                                             ) ")or die($conexion->error);
+        $conexion -> query("UPDATE productos 
+                                SET inventario = inventario -". $arreglo[$i]['Cantidad']."
+                                WHERE id = ".$arreglo[$i]['Id'] )or die($conexion->error);
     }
+
+
+    /*INSERTANDO DATOS EN LA TABLA CLIENTES*/
+    $conexion -> query("INSERT INTO clientes(nombre,apellido,celular,direccion, localidad, email, id_venta)
+                            VALUES(
+                            '".$_POST['nombre']."',
+                            '".$_POST['apellido']."',
+                            '".$_POST['celular']."',
+                            '".$_POST['direccion']."',
+                            '".$_POST['localidad']."',
+                            '".$_POST['email']."',
+                            $id_venta
+                            )" )or die($conexion->error);
 
 
     unset($_SESSION['carrito']);
