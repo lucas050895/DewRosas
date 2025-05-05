@@ -94,4 +94,7 @@ main > form > input:hover{
     main > form > fieldset > div{
         width: 50%;
     }
+    main > form > fieldset > div:nth-child(4){
+        margin: 0 25%;
+    }
 }

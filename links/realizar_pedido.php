@@ -33,9 +33,9 @@
     ?>
 
     <main>
-        <form action="../php/subir_cliente.php" method="POST">
+        <form action="gracias.php" method="POST">
             <fieldset>
-                <legend>Tus datos</legend>
+                <legend>Crear cuenta</legend>
                 <div>
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nombre" name="nombre" required>
@@ -43,29 +43,33 @@
 
                 <div>
                     <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" name="apellido">
+                    <input type="text" id="apellido" name="apellido" required>
                 </div>
 
                 <div>
                     <label for="celular">Celular</label>
-                    <input type="text" id="celular" name="celular">
-                </div>
-
-                <div>
-                    <label for="email">E-mail</label>
-                    <input type="text" id="email" name="email">
+                    <input type="text" id="celular" name="celular" required>
                 </div>
 
                 <div>
                     <label for="direccion">Dirección</label>
-                    <input type="text" id="direccion" name="direccion">
+                    <input type="text" id="direccion" name="direccion" required>
                 </div>
 
                 <div>
                     <label for="localidad">Localidad</label>
-                    <input type="text" id="localidad" name="localidad">
+                    <input type="text" id="localidad" name="localidad" required>
                 </div>
 
+                <div>
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="contraseña">Contraseña</label>
+                    <input type="text" id="contraseña" name="contraseña" required>
+                </div>
             </fieldset>
 
                 <div>
