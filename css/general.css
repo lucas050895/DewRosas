@@ -20,15 +20,9 @@
     --fuente-dos: 'Noto Sans SC';
     --color-primario: #000;
     --color-secundario: #FFF;
+    --color-terciario: #ec8fe6;
     font-size: 16px;
 }
-
-
-
-body{
-    color: var(--color-primario);
-}
-
 
 
 .titulo{
