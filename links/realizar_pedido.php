@@ -14,18 +14,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <?php
-        include('../layout/meta.php');
-    ?>
+    <!-- META -->
+    <?php include('../layout/meta.php'); ?>
 
+    <!-- TITULO -->
     <title>Realizar Pedido - Dew Rosas</title>
 
+    <!-- ESTILOS -->
     <link rel="stylesheet" href="../css/realizar_pedido.css">
 
-    <!-- FONTAWESOME  -->
-    <script src="https://kit.fontawesome.com/439ee37b3b.js" crossorigin="anonymous"></script>
-    <!-- BOXICONS  -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ICONOS -->
+    <?php include('../layout/iconos.php'); ?>
 </head>
 <body>
     <?php
@@ -48,7 +47,7 @@
 
                 <div>
                     <label for="celular">Celular</label>
-                    <input type="text" id="celular" name="celular" required>
+                    <input type="number" id="celular" name="celular" required>
                 </div>
 
                 <div>
@@ -63,12 +62,12 @@
 
                 <div>
                     <label for="email">E-mail</label>
-                    <input type="text" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
 
                 <div>
                     <label for="contraseña">Contraseña</label>
-                    <input type="text" id="contraseña" name="contraseña" required>
+                    <input type="password" id="contraseña" name="contraseña" required>
                 </div>
             </fieldset>
 
@@ -109,6 +108,8 @@
     <?php
         include('../layout/footer.php');
     ?>
-    
+
+    <!-- SCRIPT DEL MENU -->
+    <script src="../js/menu.js"></script>
 </body>
 </html>
