@@ -67,25 +67,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <?php
-        include('../layout/meta.php');
-    ?>
+    <!-- META -->
+    <?php include('../layout/meta.php'); ?>
 
+    <!-- TITULO -->
     <title>Carrito - Dew Rosas</title>
 
+    <!-- ESTILOS -->
     <link rel="stylesheet" href="../css/carrito.css">
 
-    <!-- FONTAWESOME  -->
-    <script src="https://kit.fontawesome.com/439ee37b3b.js" crossorigin="anonymous"></script>
-    <!-- BOXICONS  -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+    <!-- ICONOS -->
+    <?php include('../layout/iconos.php'); ?>
 </head>
 <body>
-    <?php
-        include('../layout/header.php');
-    ?>  
+    <!-- HEADER -->
+    <?php include('../layout/header.php');?>  
       
+    <!-- CONTENIDO -->
     <main class="contenedor">
         <table>
             <thead>
@@ -155,9 +153,8 @@
         </tbody>
     </table>
 
-    <?php
-        include('../layout/footer.php');
-    ?> 
+    <!-- FOOTER -->
+    <?php include('../layout/footer.php');?> 
     
     <script src="../js/menu.js"></script>
     <script src="../js/jquery-3.7.1.js"></script>
@@ -183,5 +180,7 @@
         });
     </script>
 
+    <!-- SCRIPT DEL MENU -->
+    <script src="../js/menu.js"></script>
 </body>
 </html>

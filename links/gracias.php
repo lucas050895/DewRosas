@@ -48,56 +48,45 @@
                                 WHERE id = ".$arreglo[$i]['Id'] )or die($conexion->error);
     }
 
-
-    /*INSERTANDO DATOS EN LA TABLA CLIENTES*/
-    $conexion -> query("INSERT INTO clientes(nombre,apellido,celular,direccion, localidad, email, id_venta)
-                            VALUES(
-                            '".$_POST['nombre']."',
-                            '".$_POST['apellido']."',
-                            '".$_POST['celular']."',
-                            '".$_POST['direccion']."',
-                            '".$_POST['localidad']."',
-                            '".$_POST['email']."',
-                            $id_venta
-                            )" )or die($conexion->error);
-
+    include("../php/mail.php");
 
     unset($_SESSION['carrito']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php
-        include('../layout/meta.php');
-    ?>
+    <!-- META -->
+    <?php include('../layout/meta.php');?>
 
+    <!-- TITULO -->
     <title>Gracias - Dew Rosas</title>
 
-    <link rel="stylesheet" href="../css/realizar_pedido.css">
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="../css/gracias.css">
 
-    <!-- FONTAWESOME  -->
-    <script src="https://kit.fontawesome.com/439ee37b3b.js" crossorigin="anonymous"></script>
-    <!-- BOXICONS  -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ICONOS -->
+    <?php include('../layout/iconos.php'); ?>
 </head>
 <body>
-    <?php
-        include('../layout/header.php');
-    ?>
+    <!-- HEADER -->
+    <?php include('../layout/header.php'); ?>
 
+    <!-- CONTENIDO -->
     <main>
         <div>
             <h2>¡Gracias por su compra!</h2>
             <span>Nos comunicaremos a la brevedad con usted para coordinar la entrega y el pago.</span>
         </div>
         <div>
-            <p>Descargar tu factura en PDF</p>
+            <p>Ya se envio los datos de la compra por email.</p>
         </div>
     </main>
 
-    <?php
-        include('../layout/footer.php');
-    ?>
+    <!-- FOOTER -->
+    <?php include('../layout/footer.php');?>  
+
     
+    <!-- SCRIPT DEL MENU -->
+    <script src="../js/menu.js"></script>
 </body>
 </html>
