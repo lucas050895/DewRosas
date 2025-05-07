@@ -1,0 +1,17 @@
+@import url(general.css);
+
+
+main{
+    width: 100%;
+    max-width: 700px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3em auto;
+    text-align: center;
+}
+main > div{
+    margin: 2em auto;
+    font-size: 1.2em;
+}
