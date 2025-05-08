@@ -14,6 +14,7 @@
 
     $datosUsuarios =mysqli_fetch_row($datos);
 
+
     $datos2 = $conexion->query("SELECT *
                                     FROM ventas 
                                     WHERE id=" .$_GET['id_venta']);
@@ -27,6 +28,13 @@
                                     FROM productos_venta
                                     INNER JOIN productos ON productos_venta.id_producto = productos.id
                                     WHERE id_venta =".$_GET['id_venta'])or die($conexion->error);
+
+
+    $total = $conexion->query("SELECT SUM(precio), id_venta
+                                    FROM productos_venta
+                                    WHERE id_venta =".$_GET['id_venta'])or die($conexion->error);
+
+    $totalVenta =mysqli_fetch_row($total);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -85,6 +93,12 @@
                                 <td>$ <?php echo number_format($f['precio'] , 0, ',', '.');?></td>
                             </tr>
                     <?php } ?>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td colspan="2">Total</td>
+                        <td colspan="1">$<?php echo number_format($totalVenta['0'], 0, ',', '.');?></td>
+                    </tr>
                 </tbody>
             </table>
         </fieldset>
