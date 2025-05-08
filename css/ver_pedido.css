@@ -1,0 +1,71 @@
+@import url(general.css);
+
+
+
+/*CONTENEDOR*/
+main{
+    width: 100%;
+    max-width: 720px;
+    margin: auto;
+    padding: 2em;
+}
+
+
+
+/*SUBTITULO*/
+main > h2{
+    font-size: 2em;
+    text-align: center;
+}
+
+
+
+/*CONTENEDOR DEL COMPRADOR Y PEDIDO*/
+main > fieldset{
+    margin: 2em auto;
+    padding: 10px;
+    border: 1px solid black;
+}
+/*TITULO*/
+main > fieldset > legend{
+    margin: auto;
+    padding: 0 1em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+/*CONTENEDOR DE CADA ITEMS DEL COMPRADOR Y DEL PEDIDO*/
+main > fieldset > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: .5em auto;
+}
+
+
+main > fieldset > table{
+    width: 100%;
+    border-collapse: collapse;
+}
+main > fieldset > table > thead{
+    height: 25px;
+    text-transform: uppercase;
+    color: var(--color-secundario);
+    background-color: var(--color-primario);
+}
+main > fieldset > table > thead > tr > td:nth-child(1){
+    width: 50%;
+}
+main > fieldset > table > thead > tr > td:nth-child(2){
+    width: 25%;
+}
+main > fieldset > table > thead > tr > td:nth-child(3){
+    width: 25%;
+}
+
+
+
+/*PARAFFO FINAL*/
+main > p{
+    text-align: center;
+    font-style: italic;
+}
