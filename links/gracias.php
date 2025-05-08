@@ -16,21 +16,23 @@
     }
 
     /*INSERTANDO DATOS EN LA TABLA USUARIOS*/
-    $conexion -> query("INSERT INTO usuario(nombre,apellido,celular,email,contraseña)
+    $conexion -> query("INSERT INTO usuario(nombre,apellido,celular,email,contraseña,img_perfil,nivel)
                             VALUES(
                             '".$_POST['nombre']."',
                             '".$_POST['apellido']."',
                             '".$_POST['celular']."',
                             '".$_POST['email']."',
-                            '".sha1($_POST['contraseña'])."'
+                            '".sha1($_POST['contraseña'])."',
+                            'example.jpg',
+                            'cliente'
                             )" )or die($conexion->error);
 
 
     /*INSERTANDO DATOS EN LA TABLA VENTAS*/
     $id_usuario = $conexion -> insert_id;
     $fecha = date('Y-m-d h:m:s');
-    $conexion -> query("INSERT INTO ventas(id_usuario,total,fecha)
-                                VALUES($id_usuario,$total,'$fecha') ")or die($conexion->error);
+    $conexion -> query("INSERT INTO ventas(id_usuario,fecha)
+                                VALUES($id_usuario,'$fecha') ")or die($conexion->error);
             
 
     /*INSERTANDO DATOS EN LA TABLA PRODUCTOS_VENTAS*/
@@ -41,7 +43,7 @@
                                     ".$arreglo[$i]['Id'].",
                                     ".$arreglo[$i]['Cantidad'].",
                                     ".$arreglo[$i]['Precio'].",
-                                    ".$arreglo[$i]['Cantidad']*$arreglo[$i]['Precio']."
+                                    ".$arreglo[$i]['Cantidad'] * $arreglo[$i]['Precio']."
                                                             ) ")or die($conexion->error);
         $conexion -> query("UPDATE productos 
                                 SET inventario = inventario -". $arreglo[$i]['Cantidad']."
