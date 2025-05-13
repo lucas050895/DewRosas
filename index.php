@@ -44,14 +44,14 @@
                             while($fila =mysqli_fetch_array($resultado)){ ?>
                                 <article class="cCarousel-item">
                                     <a href="http://lucasconde.ddns.net/DewRosas/links/producto.php?id=<?php echo $fila['id']; ?>">
+                                        <figure>
+                                            <img src="assets/Img/<?php echo $fila['imagen1'];?>" alt="">
+                                        </figure>
+
                                         <span>
                                             <?php echo $fila['nombre']; ?>
                                         </span>
-                                        <figure>
-                                            <!-- AGREGAR IMAGEN A LA CARPETA "assets/img" Y CAMBIAR example.jpg <?php echo $fila['nombre']; ?> -->
-                                            <img src="assets/img/example.jpg" alt="<?php echo $fila['nombre']; ?>">
-                                        </figure>
-                                            
+
                                         <span>
                                             <?php
                                                 echo $precio_formateado = number_format($fila['precio'], 0, ',', '.');
@@ -100,8 +100,7 @@
                                                 <?php echo $fila['nombre']; ?>
                                             </span>
                                             <figure>
-                                                <!-- AGREGAR IMAGEN A LA CARPETA "assets/img" Y CAMBIAR example.jpg <?php echo $fila['nombre']; ?> -->
-                                                <img src="assets/img/example.jpg" alt="<?php echo $fila['nombre']; ?>">
+                                                <img src="assets/img/<?php echo $fila['imagen1'];?>" alt="<?php echo $fila['nombre']; ?>">
                                             </figure>
 
                                             <span>
@@ -130,8 +129,7 @@
                                                 <?php echo $fila['nombre']; ?>
                                             </span>
                                             <figure>
-                                                <!-- AGREGAR IMAGEN A LA CARPETA "assets/img" Y CAMBIAR example.jpg <?php echo $fila['nombre']; ?> -->
-                                                <img src="assets/img/example.jpg" alt="<?php echo $fila['nombre']; ?>">
+                                                <img src="assets/img/<?php echo $fila['imagen1'];?>" alt="<?php echo $fila['nombre']; ?>">
                                             </figure>
 
                                             <span>
@@ -160,8 +158,7 @@
                                                 <?php echo $fila['nombre']; ?>
                                             </span>
                                             <figure>
-                                                <!-- AGREGAR IMAGEN A LA CARPETA "assets/img" Y CAMBIAR example.jpg <?php echo $fila['nombre']; ?> -->
-                                                <img src="assets/img/example.jpg" alt="<?php echo $fila['nombre']; ?>">
+                                                <img src="assets/img/<?php echo $fila['imagen1'];?>" alt="<?php echo $fila['nombre']; ?>">
                                             </figure>
 
                                             <span>
