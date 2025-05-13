@@ -23,7 +23,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Productos | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -81,7 +81,7 @@
         <?php } ?>
 
 
-        <table>
+        <table class="col-sm-12">
           <thead>
             <tr>
               <th>Id</th>
@@ -92,6 +92,7 @@
               <th>Categoria</th>
               <th>Talla</th>
               <th>Color</th>
+              <th>Destacado</th>
               <th></th>
             </tr>
           </thead>
@@ -109,6 +110,16 @@
                   <td> <?php echo $row['nombreCategoria'] ?> </td>
                   <td> <?php echo $row['talla'] ?> </td>
                   <td> <?php echo $row['color'] ?> </td>
+                  <td>
+                    <?php
+                        if (empty($row['destacado'] != 1)) {
+                            echo "Si";
+                        }else{
+                            echo "No";
+                        }
+                    ?>
+                  </td>
+                  
                   <td>
                       <button class="btn btn-primary btn-small btnEditar"  
                         data-id="<?php echo $row['id']; ?>"
