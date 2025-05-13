@@ -162,7 +162,7 @@
             <?php
               if($arregloUsuario['nivel']== 'admin'){ ?>
                   <li class="nav-item">
-                      <a href="http://lucasconde.ddns.net/DewRosas/admin//productos.php" class="nav-link">
+                      <a href="http://lucasconde.ddns.net/DewRosas/admin/productos.php" class="nav-link">
                           <i class="nav-icon far fa-image"></i>
                           <p>Productos</p>
                       </a>
