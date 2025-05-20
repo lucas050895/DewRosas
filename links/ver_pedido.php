@@ -108,9 +108,6 @@
             y el total de la compra es de $<?php echo number_format($datosVentas['2'], 0, ',', '.');?>.</p>
     </main>
 
-
-
-    
     <!-- FOOTER -->
     <?php include('../layout/footer.php'); ?>
 
