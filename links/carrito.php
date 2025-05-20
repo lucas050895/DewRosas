@@ -21,6 +21,7 @@
                 // Si ya existe, solo aumentamos la cantidad
                 $arreglo[$numero]['Cantidad'] = $arreglo[$numero]['Cantidad'] + 1;
                 $_SESSION['carrito']=$arreglo;
+                header("Location: carrito.php");
             }else{
                 // Si no existe, lo agregamos al carrito
                 $nombre = "";
@@ -40,6 +41,7 @@
 
                 array_push($arreglo, $arregloNuevo);
                 $_SESSION['carrito']=$arreglo;
+                header("Location: carrito.php");
             }
         }
     }else{
@@ -61,6 +63,7 @@
                 'Cantidad' => 1
             );
             $_SESSION['carrito']=$arreglo;
+            header("Location: carrito.php");
         }
     }
 ?>
