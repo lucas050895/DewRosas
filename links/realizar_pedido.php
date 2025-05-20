@@ -32,7 +32,7 @@
     ?>
 
     <main>
-        <form action="gracias.php" method="POST">
+        <form action="../php/insertar_pedido.php" method="POST">
             <fieldset>
                 <legend>Crear cuenta</legend>
                 <div>

@@ -1,61 +1,19 @@
 <?php
-    include('../conexion/conexion.php');
+    if(isset($_GET['id_venta']) && isset($_GET['metodo'])) {
+        
+        include("../conexion/conexion.php");
 
-    session_start();
+        $conexion->query("INSERT INTO pagos (id_venta, metodo)
+                            VALUES (".$_GET['id_venta'].", ".$_GET['metodo'].")") or die($conexion->error);
 
-    if(!isset($_SESSION['carrito'])){
-        header("Location: ../index.php");
+        header("Location: gracias.php?id_venta=".$_GET['id_venta']);
+        
+        exit();
     }
 
-    $arreglo = $_SESSION['carrito'];
-
-    $total = 0;
-
-    for($i=0; $i<count($arreglo); $i++){
-        $total = $arreglo[$i]['Precio'] * $arreglo[$i]['Cantidad'];
-    }
-
-    /*INSERTANDO DATOS EN LA TABLA USUARIOS*/
-    $conexion -> query("INSERT INTO usuario(nombre,apellido,celular,email,contraseña,img_perfil,nivel)
-                            VALUES(
-                            '".$_POST['nombre']."',
-                            '".$_POST['apellido']."',
-                            '".$_POST['celular']."',
-                            '".$_POST['email']."',
-                            '".sha1($_POST['contraseña'])."',
-                            'example.jpg',
-                            'cliente'
-                            )" )or die($conexion->error);
-
-
-    /*INSERTANDO DATOS EN LA TABLA VENTAS*/
-    $id_usuario = $conexion -> insert_id;
-    $fecha = date('Y-m-d h:m:s');
-    $conexion -> query("INSERT INTO ventas(id_usuario,fecha)
-                                VALUES($id_usuario,'$fecha') ")or die($conexion->error);
-            
-
-    /*INSERTANDO DATOS EN LA TABLA PRODUCTOS_VENTAS*/
-    $id_venta= $conexion ->insert_id ;
-    for($i=0; $i<count($arreglo); $i++){
-        $conexion -> query("INSERT INTO productos_venta(id_venta, id_producto, cantidad, precio, subtotal)
-                                VALUES($id_venta,
-                                    ".$arreglo[$i]['Id'].",
-                                    ".$arreglo[$i]['Cantidad'].",
-                                    ".$arreglo[$i]['Precio'].",
-                                    ".$arreglo[$i]['Cantidad'] * $arreglo[$i]['Precio']."
-                                                            ) ")or die($conexion->error);
-        $conexion -> query("UPDATE productos 
-                                SET inventario = inventario -". $arreglo[$i]['Cantidad']."
-                                WHERE id = ".$arreglo[$i]['Id'] )or die($conexion->error);
-    }
-
-    include("../php/mail.php");
-
-    unset($_SESSION['carrito']);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- META -->
     <?php include('../layout/meta.php');?>
