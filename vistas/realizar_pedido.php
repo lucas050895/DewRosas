@@ -1,5 +1,5 @@
 <?php
-    include('../conexion/conexion.php');
+    include('../config/conexion.php');
 
     session_start();
 
@@ -17,10 +17,7 @@
     <!-- META -->
     <?php include('../layout/meta.php'); ?>
 
-    <!-- TITULO -->
-    <title>Realizar Pedido - Dew Rosas</title>
-
-    <!-- ESTILOS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/realizar_pedido.css">
 
     <!-- ICONOS -->
@@ -110,6 +107,6 @@
     ?>
 
     <!-- SCRIPT DEL MENU -->
-    <script src="../js/menu.js"></script>
+    <script src="../assets/js/menu.js"></script>
 </body>
 </html>

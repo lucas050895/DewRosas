@@ -2,7 +2,7 @@
 
     session_start();
 
-    include("../conexion/conexion.php");
+    include("../config/conexion.php");
 
     if(isset($_POST['email']) && isset($_POST['password'])){
         $resultado = $conexion->query("SELECT *

@@ -1,0 +1,54 @@
+# BLOQUEAR ADMIN
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/DewRosas/admin/?$ [NC]
+RewriteRule ^ - [F]
+
+# BLOQUEAR ASSETS
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/DewRosas/assets/?$ [NC]
+RewriteRule ^ - [F]
+
+# BLOQUEAR CSS
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/DewRosas/assets/css/?$ [NC]
+RewriteRule ^ - [F]
+
+# BLOQUEAR JS
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/DewRosas/assets/js/?$ [NC]
+RewriteRule ^ - [F]
+
+# BLOQUEAR CONFIG
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/DewRosas/config/?$ [NC]
+RewriteRule ^ - [F]
+
+# BLOQUEAR PHP
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/DewRosas/php/?$ [NC]
+RewriteRule ^ - [F]
+
+# BLOQUEAR LAYOUT
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/DewRosas/layout/?$ [NC]
+RewriteRule ^ - [F]
+
+# BLOQUEAR VISTAS
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/DewRosas/vistas/?$ [NC]
+RewriteRule ^ - [F]
+
+# BLOQUEAR VISTAS/ERRORES
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/DewRosas/vistas/errores/?$ [NC]
+RewriteRule ^ - [F]
+
+# QUITAR EXTENSION .php
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+
+ErrorDocument 404 http://lucasconde.ddns.net/DewRosas/vistas/errores/404
+ErrorDocument 403 http://lucasconde.ddns.net/DewRosas/vistas/errores/403

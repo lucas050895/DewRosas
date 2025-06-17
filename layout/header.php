@@ -8,9 +8,8 @@
         <div class="menu-overlay">
             <ul class="menu-items">
             <li><a href="http://lucasconde.ddns.net/DewRosas">Inicio</a></li>
-            <li><a href="#">Categorias</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="http://lucasconde.ddns.net/DewRosas/vistas/acerca">Acerca de</a></li>
+            <li><a href="http://lucasconde.ddns.net/DewRosas/vistas/login">Iniciar Sesión</a></li>
             </ul>
         </div>
     </nav>
@@ -23,7 +22,7 @@
     </h1>
 
     <div class="carrito">
-        <a href="http://lucasconde.ddns.net/DewRosas/links/carrito.php">
+        <a href="http://lucasconde.ddns.net/DewRosas/vistas/carrito">
             <i class='bx bx-cart'></i>
             <span>
             <?php

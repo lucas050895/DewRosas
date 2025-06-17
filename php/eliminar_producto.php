@@ -1,7 +1,7 @@
 <?php
 
 
-    include("../conexion/conexion.php");
+    include("../config/conexion.php");
 
 
     $fila = $conexion ->query('SELECT imagen FROM productos WHERE id='.$_POST['id']);

@@ -1,5 +1,5 @@
 <?php
-    include('../conexion/conexion.php');
+    include('../config/conexion.php');
 ?>
 
 <!DOCTYPE html>
@@ -8,11 +8,8 @@
 	<!-- META -->
     <?php include('../layout/meta.php');?>
 
-	<!-- TITULO -->
-    <title>Dew Rosas</title>
-
-	<!-- ESTILOS -->
-    <link rel="stylesheet" href="../css/producto.css">
+	<!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/producto.css">
 
     <!-- ICONOS -->
     <?php include('../layout/iconos.php'); ?>
@@ -29,10 +26,10 @@
                 if(mysqli_num_rows($resultado) > 0){
                     $fila = mysqli_fetch_row($resultado);
                 }else{
-                    header("Location: ../index.php");
+                    header("Location: ../index");
                 }
             }else{
-                header("Location: ../index.php");
+                header("Location: ../index");
             }
         ?>
         
@@ -40,19 +37,19 @@
 
         <div class="contenedor-img">
 			<div class="imagen actual">
-				<img src="../assets/Img/example.jpg" />
+				<img src="../assets/img/example.jpg" />
 			</div>
 			
 			<div class="imagen">
-				<img src="../assets/Img/example.jpg" />
+				<img src="../assets/img/example.jpg" />
 			</div>
 			
 			<div class="imagen">
-				<img src="../assets/Img/example.jpg" />
+				<img src="../assets/img/example.jpg" />
 			</div>
 			
 			<div class="imagen">
-				<img src="../assets/Img/example.jpg" />
+				<img src="../assets/img/example.jpg" />
 			</div>
 			
 			<a href="#" class="anterior" onclick="anterior();">&#10094;</a>
@@ -81,7 +78,7 @@
                     <?php echo $precio_formateado = number_format($fila[3], 0, ',', '.');?>
                 </p>
 
-                <a href="carrito.php?id=<?php echo $fila[0]; ?>" class="btn">
+                <a href="carrito?id=<?php echo $fila[0]; ?>" class="btn">
                     <button>Agregar al carrito</button>
                 </a>
             </div>
@@ -94,9 +91,9 @@
 
 
     <!-- SCRIPT DEL MENU -->
-    <script src="../js/menu.js"></script>
+    <script src="../assets/js/menu.js"></script>
 
-    <script src="../js/carrousel.js"></script>
+    <script src="../assets/js/carrousel.js"></script>
 	
     <script>
         var actual = 0;

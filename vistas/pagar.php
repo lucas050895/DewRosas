@@ -1,6 +1,6 @@
 <?php
 
-    include('../conexion/conexion.php');
+    include('../config/conexion.php');
 
     if(!isset($_GET['id_venta'])){
         header('Location ../index.php');
@@ -51,9 +51,9 @@
     $data = [
         "items" => $items,
         "back_urls" => [
-            "success" => "https://lucasconde.ddns.net/DewRosas/links/gracias.php?id_venta=".$_GET['id_venta']."&metodo=mercado_pago",
-            "failure" => "https://lucasconde.ddns.net/DewRosas/links/error.php?=exito",
-            "pending" => "https://lucasconde.ddns.net/DewRosas/links/error.php?=exito"
+            "success" => "https://lucasconde.ddns.net/DewRosas/vistas/gracias?id_venta=".$_GET['id_venta']."&metodo=mercado_pago",
+            "failure" => "https://lucasconde.ddns.net/DewRosas/vistas/error?=exito",
+            "pending" => "https://lucasconde.ddns.net/DewRosas/vistas/error?=exito"
         ],
         "auto_return" => "approved"
     ];
@@ -81,11 +81,8 @@
 	<!-- META -->
     <?php include('../layout/meta.php');?>
 
-	<!-- TITULO -->
-    <title>Pagar - Dew Rosas</title>
-
-	<!-- ESTILOS -->
-    <link rel="stylesheet" href="../css/ver_pedido.css">
+	<!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/ver_pedido.css">
 
     <!-- ICONOS -->
     <?php include('../layout/iconos.php'); ?>

@@ -4,3 +4,6 @@
 <meta name="keywords" content="website, lenceria, ropa, femenina, carrito de compras, ecommerce, tienda online">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Lucas Conde">
+
+
+<title>Dew Rosas</title>

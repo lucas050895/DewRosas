@@ -24,5 +24,8 @@
         </div>
     </section>
     
-    <h4>Sitio creado por Lucas Conde <br>- Todos los derechos reservados -</h6>
+    <section>
+        <h3>Creado por Lucas Conde <i class="fas fa-copyright"></i> 2024 </h3>
+        <p><a href="http://lucasconde.ddns.net/LucasConde/">lucasconde.ddns.net</a></p>
+    </section>
 </footer>

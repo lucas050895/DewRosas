@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    include('../conexion/conexion.php');
+    include('../config/conexion.php');
 
     if(isset($_SESSION['carrito'])){
         // Si exite buscamos si ya estaba agregado ese producto
@@ -73,11 +73,8 @@
     <!-- META -->
     <?php include('../layout/meta.php'); ?>
 
-    <!-- TITULO -->
-    <title>Carrito - Dew Rosas</title>
-
-    <!-- ESTILOS -->
-    <link rel="stylesheet" href="../css/carrito.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/carrito.css">
 
     <!-- ICONOS -->
     <?php include('../layout/iconos.php'); ?>
@@ -146,7 +143,7 @@
         <tbody>
             <tr>
                 <td colspan="4">
-                    <a href="realizar_pedido.php" class="realizarPedido">
+                    <a href="realizar_pedido" class="realizarPedido">
                         <button>
                             Checkout
                         </button>
@@ -159,8 +156,8 @@
     <!-- FOOTER -->
     <?php include('../layout/footer.php');?> 
     
-    <script src="../js/menu.js"></script>
-    <script src="../js/jquery-3.7.1.js"></script>
+    <script src="../assets/js/menu.js"></script>
+    <script src="../assets/js/jquery-3.7.1.js"></script>
 
     <script>
         $(document).ready(function(){
@@ -184,6 +181,6 @@
     </script>
 
     <!-- SCRIPT DEL MENU -->
-    <script src="../js/menu.js"></script>
+    <script src="../assets/js/menu.js"></script>
 </body>
 </html>

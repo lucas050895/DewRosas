@@ -1,16 +1,16 @@
 <?php
   session_start();
 
-  include("../conexion/conexion.php");
+  include("../config/conexion.php");
 
   if(!isset($_SESSION['login'])){
-    header("Location: ../index.php");
+    header("Location: ../index");
   }
 
   $arregloUsuario = $_SESSION['login'];
 
   if($arregloUsuario['nivel']!= 'admin'){
-    header("Location: ../index.php");
+    header("Location: ../index");
   }
 
   $resultado = $conexion->query("SELECT productos.*, categorias.nombre AS nombreCategoria

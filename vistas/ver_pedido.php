@@ -1,8 +1,8 @@
 <?php
-    include('../conexion/conexion.php');
+    include('../config/conexion.php');
 
     if(!isset($_GET['id_venta'])){
-        header('Location ../index.php');
+        header('Location ../index');
     }
 
     $datos = $conexion->query("SELECT 
@@ -42,10 +42,7 @@
     <!-- META -->
     <?php include('../layout/meta.php'); ?>
 
-    <!-- TITULO -->
-    <title>Ver pedido - Dew Rosas</title>
-
-    <!-- ESTILOS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/ver_pedido.css">
 
     <!-- ICONOS -->
@@ -112,6 +109,6 @@
     <?php include('../layout/footer.php'); ?>
 
     <!-- SCRIPT DEL MENU -->
-    <script src="../js/menu.js"></script>
+    <script src="../assets/js/menu.js"></script>
 </body>
 </html>

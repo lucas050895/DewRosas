@@ -1,5 +1,5 @@
 <?php
-    include('conexion/conexion.php');
+    include('config/conexion.php');
 
     session_start();
 ?>
@@ -7,17 +7,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <?php
-        include('layout/meta.php');
-    ?>
+    <!-- META  -->
+    <?php include('layout/meta.php'); ?>
 
-    <title>Dew Rosas</title>
-    <link rel="stylesheet" href="css/index.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/index.css">
 
-    <!-- FONTAWESOME  -->
-    <script src="https://kit.fontawesome.com/439ee37b3b.js" crossorigin="anonymous"></script>
-    <!-- BOXICONS  -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ICONOS  -->
+    <?php include('layout/iconos.php'); ?>
 </head>
 <body>
     <?php
@@ -43,7 +40,7 @@
                             $resultado = $conexion ->query("SELECT * FROM productos WHERE destacado = 1 AND inventario > 0 ")or die($conexion -> error);
                             while($fila =mysqli_fetch_array($resultado)){ ?>
                                 <article class="cCarousel-item">
-                                    <a href="http://lucasconde.ddns.net/DewRosas/links/producto.php?id=<?php echo $fila['id']; ?>">
+                                    <a href="http://lucasconde.ddns.net/DewRosas/vistas/producto?id=<?php echo $fila['id']; ?>">
                                         <figure>
                                             <img src="assets/Img/<?php echo $fila['imagen1'];?>" alt="">
                                         </figure>
@@ -95,7 +92,7 @@
                                                                     LIMIT 10")or die($conexion -> error);
                                 while($fila =mysqli_fetch_array($resultado)){ ?>
                                     <article>
-                                        <a href="http://lucasconde.ddns.net/DewRosas/links/producto.php?id=<?php echo $fila['id']; ?>">
+                                        <a href="http://lucasconde.ddns.net/DewRosas/vistas/producto?id=<?php echo $fila['id']; ?>">
                                             <span>
                                                 <?php echo $fila['nombre']; ?>
                                             </span>
@@ -124,7 +121,7 @@
                                                                     LIMIT 10")or die($conexion -> error);
                                 while($fila =mysqli_fetch_array($resultado)){ ?>
                                     <article>
-                                        <a href="http://lucasconde.ddns.net/DewRosas/links/producto.php?id=<?php echo $fila['id']; ?>">
+                                        <a href="http://lucasconde.ddns.net/DewRosas/vistas/producto?id=<?php echo $fila['id']; ?>">
                                             <span>
                                                 <?php echo $fila['nombre']; ?>
                                             </span>
@@ -153,7 +150,7 @@
                                                                     LIMIT 10")or die($conexion -> error);
                                 while($fila =mysqli_fetch_array($resultado)){ ?>
                                     <article>
-                                        <a href="http://lucasconde.ddns.net/DewRosas/links/producto.php?id=<?php echo $fila['id']; ?>">
+                                        <a href="http://lucasconde.ddns.net/DewRosas/vistas/producto?id=<?php echo $fila['id']; ?>">
                                             <span>
                                                 <?php echo $fila['nombre']; ?>
                                             </span>
@@ -181,8 +178,8 @@
         include('layout/footer.php');
     ?>
     
-    <script src="js/menu.js"></script>
-    <script src="js/carrousel.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/carrousel.js"></script>
 
 </body>
 </html>

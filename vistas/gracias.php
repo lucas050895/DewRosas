@@ -1,12 +1,12 @@
 <?php
     if(isset($_GET['id_venta']) && isset($_GET['metodo'])) {
         
-        include("../conexion/conexion.php");
+        include("../config/conexion.php");
 
         $conexion->query("INSERT INTO pagos (id_venta, metodo)
                             VALUES (".$_GET['id_venta'].", ".$_GET['metodo'].")") or die($conexion->error);
 
-        header("Location: gracias.php?id_venta=".$_GET['id_venta']);
+        header("Location: gracias?id_venta=".$_GET['id_venta']);
         
         exit();
     }
@@ -18,10 +18,7 @@
     <!-- META -->
     <?php include('../layout/meta.php');?>
 
-    <!-- TITULO -->
-    <title>Gracias - Dew Rosas</title>
-
-    <!-- ESTILOS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/gracias.css">
 
     <!-- ICONOS -->
@@ -47,6 +44,6 @@
 
     
     <!-- SCRIPT DEL MENU -->
-    <script src="../js/menu.js"></script>
+    <script src="../assets/js/menu.js"></script>
 </body>
 </html>

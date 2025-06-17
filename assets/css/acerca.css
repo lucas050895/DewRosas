@@ -1,0 +1,17 @@
+@import url(general.css);
+
+
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main > p{
+    padding: 50px;
+    font-size: 1.2em;
+}
+main > p > span{
+    font-style: italic;
+}
