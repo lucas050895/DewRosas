@@ -29,30 +29,21 @@
   <?php include("layout/link.php");?>
   
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini sidebar-collapse">
 <div class="wrapper">
 
 <?php include("layout/header.php");?>
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">Pedidos</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6 text-right">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-              Insertar producto
-            </button>
-
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">

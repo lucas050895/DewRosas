@@ -67,5 +67,5 @@
 
     unset($_SESSION['carrito']);
 
-    header("Location: ../links/pagar.php?id_venta=".$id_venta);
+    header("Location: ../links/pagar?id_venta=".$id_venta);
 ?>

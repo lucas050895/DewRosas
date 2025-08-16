@@ -1,5 +1,5 @@
 <?php
-    include('config/conexion.php');
+    include 'config/conexion.php';
 
     session_start();
 ?>
@@ -8,17 +8,17 @@
 <html lang="es">
 <head>
     <!-- META  -->
-    <?php include('layout/meta.php'); ?>
+    <?php include 'layout/meta.php' ; ?>
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/index.css">
 
     <!-- ICONOS  -->
-    <?php include('layout/iconos.php'); ?>
+    <?php include 'layout/iconos.php'; ?>
 </head>
 <body>
     <?php
-        include('layout/header.php');
+        include 'layout/header.php';
     ?>
 
     <main class="contenedor-index">
@@ -42,7 +42,7 @@
                                 <article class="cCarousel-item">
                                     <a href="http://lucasconde.ddns.net/DewRosas/vistas/producto?id=<?php echo $fila['id']; ?>">
                                         <figure>
-                                            <img src="assets/Img/<?php echo $fila['imagen1'];?>" alt="">
+                                            <img src="assets/img/<?php echo $fila['imagen1'];?>" alt="">
                                         </figure>
 
                                         <span>
@@ -109,7 +109,7 @@
                                     </article>
                             <?php } ?>
                         </div>
-                        <a href="#">Ver todos</a>
+                        <a href="http://lucasconde.ddns.net/DewRosas/vistas/categoria?id_categoria=1">Ver todos</a>
                     </div>
 
                     <div class="panel" id="two-panel">
@@ -138,7 +138,7 @@
                                     </article>
                             <?php } ?>
                         </div>
-                        <a href="#">Ver todos</a>
+                        <a href="http://lucasconde.ddns.net/DewRosas/vistas/categoria?id_categoria=2">Ver todos</a>
                     </div>
 
                     <div class="panel" id="three-panel">
@@ -167,7 +167,7 @@
                                     </article>
                             <?php } ?>
                         </div>
-                        <a href="#">Ver todos</a>
+                        <a href="http://lucasconde.ddns.net/DewRosas/vistas/categoria?id_categoria=3">Ver todos</a>
                     </div>
                 </div>
             </div>
@@ -175,7 +175,7 @@
     </main>
 
     <?php
-        include('layout/footer.php');
+        include 'layout/footer.php' ;
     ?>
     
     <script src="assets/js/menu.js"></script>

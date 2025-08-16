@@ -33,11 +33,11 @@
                 'imagen' => $imagen,
                 'nivel' => $nivel
             );
-            header("Location: ../admin/index.php");
+            header("Location: ../admin/index");
         }else{
-            header("Location: ../links/login.php?error=Credeciales Incorrectas");
+            header("Location: ../links/login?error=Credeciales Incorrectas");
         }
     }else{
-        header("Location: ../links/login.php");
+        header("Location: ../links/login");
     }
 ?>

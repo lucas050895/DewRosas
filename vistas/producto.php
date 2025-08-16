@@ -37,19 +37,15 @@
 
         <div class="contenedor-img">
 			<div class="imagen actual">
-				<img src="../assets/img/example.jpg" />
+				<img src="../assets/img/<?php echo $fila[4] ?>" />
 			</div>
 			
 			<div class="imagen">
-				<img src="../assets/img/example.jpg" />
+				<img src="../assets/img/<?php echo $fila[5] ?>" />
 			</div>
 			
 			<div class="imagen">
-				<img src="../assets/img/example.jpg" />
-			</div>
-			
-			<div class="imagen">
-				<img src="../assets/img/example.jpg" />
+				<img src="../assets/img/<?php echo $fila[6] ?>" />
 			</div>
 			
 			<a href="#" class="anterior" onclick="anterior();">&#10094;</a>
@@ -59,7 +55,6 @@
 				<span class="punto activo" onclick="mostrar(0);"></span>
 				<span class="punto" onclick="mostrar(1);"></span>
 				<span class="punto" onclick="mostrar(2);"></span>
-				<span class="punto" onclick="mostrar(3);"></span>
 			</div>
 			
 		</div>
@@ -70,9 +65,9 @@
 
                 <p><?php echo $fila[2]; ?></p>
 
-                <p>Talla: <?php echo $fila[11]; ?></p>
+                <p>Talla: <?php echo $fila[9]; ?></p>
 
-                <p>Color: <?php echo $fila[12]; ?></p>
+                <p>Color: <?php echo $fila[10]; ?></p>
 
                 <p class="precio">Precio: $
                     <?php echo $precio_formateado = number_format($fila[3], 0, ',', '.');?>
@@ -122,7 +117,7 @@
 			
 			function siguiente(){
 				actual++;
-				if(actual > 3){
+				if(actual > 2){
 					actual = 0;
 				}
 				mostrar(actual);
@@ -130,7 +125,7 @@
 			function anterior(){
 				actual--;
 				if(actual < 0){
-					actual = 3;
+					actual = 2;
 				}
 				mostrar(actual);
 			}

@@ -23,7 +23,6 @@
   <div class="login-logo">
     <a href="http://lucasconde.ddns.net/DewRosas/">Dew Rosas</a>
   </div>
-  <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Inciar Sesión</p>
@@ -62,10 +61,8 @@
         </div>
       </form>
     </div>
-    <!-- /.login-card-body -->
   </div>
 </div>
-<!-- /.login-box -->
 
 <!-- jQuery -->
 <script src="../admin/dashboard/plugins/jquery/jquery.min.js"></script>

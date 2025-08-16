@@ -16,7 +16,7 @@
   $resultado = $conexion->query("SELECT productos.*, categorias.nombre AS nombreCategoria
                                   FROM productos
                                   INNER JOIN categorias ON productos.id_categoria = categorias.id
-                                  ORDER BY id ASC")or die($conexion->error);
+                                  ORDER BY productos.id_categoria DESC")or die($conexion->error);
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,7 +30,7 @@
   <?php include("layout/link.php");?>
   
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini sidebar-collapse">
 <div class="wrapper">
 
 <?php include("layout/header.php");?>
@@ -162,8 +162,8 @@
             <div class="modal-body">
 
               <div class="form-group">
-                <label for="imagen">Imagen</label>
-                <input type="file" name="imagen" id="imagen" class="form-control" >
+                <label for="imagen1">Imagen</label>
+                <input type="file" name="imagen1" id="imagen1" class="form-control" >
               </div>
               
               <div class="form-group">
@@ -270,8 +270,18 @@
               <input type="hidden" id="idEdit" name="id">
 
               <div class="form-group">
-                <label for="imagenEdit">Imagen</label>
-                <input type="file" name="imagen" id="imagenEdit" class="form-control" >
+                <label for="imagenEdit">Imagen 1</label>
+                <input type="file" name="imagen1" id="imagenEdit" class="form-control" >
+              </div>
+              
+              <div class="form-group">
+                <label for="imagen2">Imagen 2</label>
+                <input type="file" name="imagen2" id="imagen2" class="form-control" >
+              </div>
+
+              <div class="form-group">
+                <label for="imagen3">Imagen 3</label>
+                <input type="file" name="imagen3" id="imagen3" class="form-control" >
               </div>
               
               <div class="form-group">

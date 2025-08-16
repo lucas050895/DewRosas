@@ -1,7 +1,37 @@
 <?php
-
-
     include("../config/conexion.php");
+
+    function procesarImagen($campo, $carpeta, $id, $conexion) {
+        if (!empty($_FILES[$campo]['name'])) {
+            $nombre = $_FILES[$campo]['name'];
+            $temp = explode('.', $nombre);
+            $extension = strtolower(end($temp));
+
+            // Nombre único con campo + uniqid
+            $nombreFinal = uniqid($campo . '_', true) . '.' . $extension;
+
+            if (in_array($extension, ['jpg', 'png'])) {
+                $rutaDestino = $carpeta . $nombreFinal;
+
+                if (move_uploaded_file($_FILES[$campo]['tmp_name'], $rutaDestino)) {
+                    // Borrado de imagen anterior
+                    $res = $conexion->query("SELECT $campo FROM productos WHERE id = $id");
+                    $fila = mysqli_fetch_row($res);
+                    $anterior = $fila[0];
+
+                    if ($anterior && file_exists($carpeta . $anterior)) {
+                        unlink($carpeta . $anterior);
+                    }
+
+                    $conexion->query("UPDATE productos SET $campo = '$nombreFinal' WHERE id = $id");
+                }
+            }
+        }
+    }
+
+    // Llamás la función una vez por campo
+    procesarImagen('imagen2', '../assets/img/', $_POST['id'], $conexion);
+    procesarImagen('imagen3', '../assets/img/', $_POST['id'], $conexion);
 
 
    if(isset($_POST['nombre']) && 
@@ -12,32 +42,6 @@
         isset($_POST['talla']) &&
         isset($_POST['color']) &&
         isset($_POST['destacado']  )){
-    
-          
-            if($_FILES['imagen']['name'] !='' ){
-                $carpeta="../assets/Img/";
-                $nombre = $_FILES['imagen']['name'];
-
-                    //imagen.casa.jpg
-                    $temp= explode( '.' ,$nombre);
-                    $extension= end($temp);
-                    
-                    $nombreFinal = time().'.'.$extension;
-                
-                    if($extension=='jpg' || $extension == 'png'){
-                        if(move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta.$nombreFinal)){
-                                $fila = $conexion ->query('SELECT imagen FROM productos WHERE id='.$_POST['id']);
-
-                                $id = mysqli_fetch_row($fila);
-
-                                if(file_exists('../assets/Img/'.$id[0])){
-                                    unlink('../assets/Img/'.$id[0]);
-                                }
-
-                                $conexion->query("UPDATE productos SET imagen ='".$nombreFinal."' WHERE id=".$_POST['id']);
-                        }
-                    }
-            }
             
             $conexion->query("UPDATE productos SET 
                                     nombre ='".$_POST['nombre']."',
@@ -51,8 +55,6 @@
 
                                     WHERE id=".$_POST['id']);
 
-        echo "se actualizo";
-
-
+        header("Location: ../admin/productos?success");
     }
 ?>

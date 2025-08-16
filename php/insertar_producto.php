@@ -10,8 +10,8 @@ include("../config/conexion.php");
         isset($_POST['color']) &&
         isset($_POST['destacado']  )){
     
-    $carpeta="../assets/Img/";
-    $nombre = $_FILES['imagen']['name'];
+    $carpeta="../assets/img/";
+    $nombre = $_FILES['imagen1']['name'];
    
     //imagen.casa.jpg
     $temp= explode( '.' ,$nombre);
@@ -20,7 +20,7 @@ include("../config/conexion.php");
     $nombreFinal = time().'.'.$extension;
    
     if($extension=='jpg' || $extension == 'png'){
-        if(move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta.$nombreFinal)){
+        if(move_uploaded_file($_FILES['imagen1']['tmp_name'], $carpeta.$nombreFinal)){
             $conexion->query("INSERT INTO productos(nombre,
                                                     descripcion,
                                                     precio,
